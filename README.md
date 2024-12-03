@@ -1,7 +1,10 @@
+![167232280-c3c752ee-3e7a-4790-93ec-1ba8a790c9fc](https://github.com/user-attachments/assets/92436851-6edf-4601-914a-72ccf561a55c)
+https://github.com/jporter-dev/zmk-config?tab=readme-ov-file
+
 # Corne ZMK setup
 This is suitable for Corne with the following features:
 - 36 keys
-- with niceview support
+- with oled support
 
 </br>
 
