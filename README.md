@@ -3,6 +3,11 @@
 
 https://github.com/jporter-dev/zmk-config?tab=readme-ov-file
 
+## New Gem OLED widget
+![image](https://github.com/user-attachments/assets/6bc80520-455e-4eb2-9ae3-eb07ea7f7d6e)
+<br>
+Check [here](https://github.com/mctechnology17/zmk-nice-oled) for source and implementation. 
+
 # Corne ZMK setup
 This is suitable for Corne with the following features:
 - 36 keys
