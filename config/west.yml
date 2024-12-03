@@ -2,10 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: mctechnology17 # This is oled-gem
+      url-base: https://github.com/mctechnology17 # This is oled-gem
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: zmk-nice-oled # This is oled-gem
+      remote: mctechnology17 # This is oled-gem
+      revision: main # This is oled-gem
   self:
     path: config
