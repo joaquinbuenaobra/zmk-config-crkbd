@@ -59,7 +59,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "QTAB";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             bindings = <&kp Q>, <&kp TAB>;
         };
 
@@ -67,7 +67,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ALTESC";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             bindings = <&kp LEFT_ALT>, <&kp ESCAPE>;
         };
     };
