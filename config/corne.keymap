@@ -54,6 +54,22 @@
             tapping-term-ms = <200>;
             bindings = <&mt LCTRL TAB>, <&kp ESC>;
         };
+
+        qtab: qtab {
+            compatible = "zmk,behavior-tap-dance";
+            label = "QTAB";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp Q>, <&kp TAB>;
+        };
+
+        altesc: altesc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ALTESC";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LEFT_ALT>, <&kp ESCAPE>;
+        };
     };
 
     combos {
@@ -73,22 +89,27 @@
 
         enter {
             bindings = <&kp ENTER>;
-            key-positions = <28 29>;
+            key-positions = <38 17>;
         };
 
         shift {
             bindings = <&sk LEFT_SHIFT>;
-            key-positions = <28 27>;
+            key-positions = <1 2 3>;
         };
 
         caps {
             bindings = <&kp CAPSLOCK>;
-            key-positions = <27 26>;
+            key-positions = <2 3 4>;
         };
 
         windows {
             bindings = <&kp LEFT_GUI>;
-            key-positions = <24 25>;
+            key-positions = <38 5>;
+        };
+
+        ctrltab {
+            bindings = <&kp LC(TAB)>;
+            key-positions = <3 4 5>;
         };
     };
 
@@ -106,28 +127,28 @@
 
         default_layer {
             bindings = <
-&none  &hm Q TAB  &kp W               &kp E         &kp R      &kp T            &kp Y      &kp U               &kp I                &kp O    &kp P            &none
-&none  &kp A      &kp S               &kp D         &kp F      &kp G            &kp H      &kp J               &kp K                &kp L    &kp SEMICOLON    &none
-&none  &lt 1 Z    &hm LEFT_CONTROL X  &kp C         &kp V      &kp B            &kp N      &kp M               &kp COMMA            &kp DOT  &hm DELETE FSLH  &none
-                                      &kp LEFT_ALT  &kp SPACE  &kp BACKSPACE    &kp ENTER  &hm LEFT_SHIFT TAB  &hm LEFT_GUI ESCAPE
+&none  &qtab               &kp W             &kp E    &kp R      &kp T            &kp Y                 &kp U  &kp I      &kp O    &hm PRINTSCREEN P  &none
+&none  &kp A               &kp S             &kp D    &kp F      &kp G            &kp H                 &kp J  &kp K      &kp L    &td0               &none
+&none  &hm LEFT_CONTROL Z  &hm LEFT_SHIFT X  &kp C    &kp V      &kp B            &kp N                 &kp M  &kp COMMA  &kp DOT  &hm DELETE FSLH    &none
+                                             &altesc  &kp SPACE  &kp BACKSPACE    &hm LEFT_SHIFT ENTER  &mo 1  &mo 2
             >;
         };
 
         num_layer {
             bindings = <
-&none  &none   &none  &kp LC(TAB)     &kp UP_ARROW    &kp PG_UP          &kp PLUS   &kp N7              &kp N8               &kp N9  &kp KP_MULTIPLY  &none
-&none  &none   &mo 2  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW    &kp MINUS  &kp N4              &kp N5               &kp N6  &kp SLASH        &none
-&none  &trans  &mo 3  &kp K_MUTE      &kp C_VOL_DN    &kp C_VOLUME_UP    &kp N0     &kp N1              &kp N2               &kp N3  &kp DOT          &none
-                      &kp LEFT_ALT    &kp SPACE       &kp BACKSPACE      &kp ENTER  &hm LEFT_SHIFT TAB  &hm LEFT_GUI ESCAPE
+&none  &none  &none  &kp LC(TAB)     &kp UP_ARROW    &kp PG_UP          &kp PLUS   &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &none
+&none  &none  &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW    &kp MINUS  &kp N4  &kp N5  &kp N6  &kp SLASH        &none
+&none  &mo 3  &none  &kp K_MUTE      &kp C_VOL_DN    &kp C_VOLUME_UP    &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT          &none
+                     &altesc         &kp SPACE       &kp BACKSPACE      &kp ENTER  &trans  &mo 2
             >;
         };
 
         sym_layer {
             bindings = <
-&none  &kp NUMBER_1  &kp NUMBER_2    &kp NUMBER_3  &kp NUMBER_4  &kp N5           &kp NUMBER_6  &kp N7              &kp N8               &kp N9    &kp N0    &none
-&none  &none         &trans          &kp GRAVE     &kp TILDE     &none            &kp MINUS     &kp EQUAL           &kp LBKT             &kp RBKT  &kp BSLH  &none
-&none  &trans        &sk LEFT_SHIFT  &none         &none         &none            &kp UNDER     &kp PLUS            &kp LBRC             &kp RBRC  &kp PIPE  &none
-                                     &kp LEFT_ALT  &kp SPACE     &kp BACKSPACE    &kp ENTER     &hm LEFT_SHIFT TAB  &hm LEFT_GUI ESCAPE
+&none  &kp NUMBER_1  &kp NUMBER_2    &kp NUMBER_3    &kp NUMBER_4  &kp N5           &kp NUMBER_6  &kp N7     &kp N8    &kp N9    &kp N0    &none
+&none  &none         &trans          &kp GRAVE       &kp TILDE     &none            &kp MINUS     &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &none
+&none  &mo 3         &sk LEFT_SHIFT  &none           &none         &none            &kp UNDER     &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE  &none
+                                     &kp LEFT_SHIFT  &kp SPACE     &kp BACKSPACE    &kp ENTER     &mo 1      &trans
             >;
         };
 
