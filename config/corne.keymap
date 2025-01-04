@@ -116,6 +116,11 @@
             bindings = <&kp PRINTSCREEN>;
             key-positions = <15 16 17>;
         };
+
+        undo {
+            bindings = <&kp LC(Z)>;
+            key-positions = <38 25>;
+        };
     };
 
     macros {
@@ -143,7 +148,7 @@
             bindings = <
 &none  &none  &none  &kp LC(TAB)     &kp UP_ARROW    &kp PG_UP          &kp PLUS   &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &none
 &none  &none  &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW    &kp MINUS  &kp N4  &kp N5  &kp N6  &kp SLASH        &none
-&none  &mo 3  &none  &kp K_MUTE      &kp C_VOL_DN    &kp C_VOLUME_UP    &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT          &none
+&none  &mo 3  &none  &kp C_MUTE      &kp C_VOL_DN    &kp C_VOLUME_UP    &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT          &none
                      &altesc         &kp SPACE       &kp BACKSPACE      &kp ENTER  &trans  &mo 2
             >;
         };
