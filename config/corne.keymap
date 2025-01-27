@@ -121,11 +121,6 @@
             bindings = <&kp LC(Z)>;
             key-positions = <38 25>;
         };
-
-        ctrlc {
-            bindings = <&kp K_COPY>;
-            key-positions = <38 13>;
-        };
     };
 
     macros {
