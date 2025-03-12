@@ -33,8 +33,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <50>;
+            tapping-term-ms = <225>;
+            quick-tap-ms = <150>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -43,7 +43,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <275>;
             bindings = <&hm RGUI SEMI>, <&kp SQT>;
         };
 
@@ -59,7 +59,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "QTAB";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <300>;
             bindings = <&kp Q>, <&kp TAB>;
         };
 
@@ -67,7 +67,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ALTESC";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <300>;
             bindings = <&kp LEFT_ALT>, <&kp ESCAPE>;
         };
 
@@ -75,16 +75,8 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TDAA";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <300>;
             bindings = <&hm LEFT_SHIFT A>, <&kp LC(A)>;
-        };
-
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NEW_BEHAVIOR";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&kp LS(Q)>, <&kp TAB>;
         };
 
         qplusctrlpluscaps: qplusctrlpluscaps {
@@ -93,7 +85,7 @@
             #binding-cells = <0>;
             bindings = <&kp Q>, <&kt LEFT_CONTROL>, <&kp CLCK>;
 
-            tapping-term-ms = <150>;
+            tapping-term-ms = <300>;
         };
 
         AplusShiftplusWIN: AplusShiftplusWIN {
@@ -102,7 +94,7 @@
             #binding-cells = <0>;
             bindings = <&kp A>, <&kt LEFT_SHIFT>, <&kp LEFT_GUI>;
 
-            tapping-term-ms = <150>;
+            tapping-term-ms = <300>;
         };
     };
 
