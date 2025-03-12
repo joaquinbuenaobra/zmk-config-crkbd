@@ -33,8 +33,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <350>;
-            quick-tap-ms = <0>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <50>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -43,7 +43,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <150>;
             bindings = <&hm RGUI SEMI>, <&kp SQT>;
         };
 
@@ -59,7 +59,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "QTAB";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <150>;
             bindings = <&kp Q>, <&kp TAB>;
         };
 
@@ -67,8 +67,42 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ALTESC";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <150>;
             bindings = <&kp LEFT_ALT>, <&kp ESCAPE>;
+        };
+
+        tdaa: tdaa {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDAA";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&hm LEFT_SHIFT A>, <&kp LC(A)>;
+        };
+
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NEW_BEHAVIOR";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp LS(Q)>, <&kp TAB>;
+        };
+
+        qplusctrlpluscaps: qplusctrlpluscaps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "QPLUSCTRLPLUSCAPS";
+            #binding-cells = <0>;
+            bindings = <&kp Q>, <&kt LEFT_CONTROL>, <&kp CLCK>;
+
+            tapping-term-ms = <150>;
+        };
+
+        AplusShiftplusWIN: AplusShiftplusWIN {
+            compatible = "zmk,behavior-tap-dance";
+            label = "APLUSSHIFTPLUSWIN";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&kt LEFT_SHIFT>, <&kp LEFT_GUI>;
+
+            tapping-term-ms = <150>;
         };
     };
 
@@ -137,28 +171,28 @@
 
         default_layer {
             bindings = <
-&none  &kp Q  &kp W  &kp E    &kp R      &kp T            &kp Y                 &kp U   &kp I      &kp O    &kp P      &none
-&none  &kp A  &kp S  &kp D    &kp F      &kp G            &kp H                 &kp J   &kp K      &kp L    &td0       &none
-&none  &kp Z  &kp X  &kp C    &kp V      &kp B            &kp N                 &kp M   &kp COMMA  &kp DOT  &kp SLASH  &none
-                     &altesc  &kp SPACE  &kp BACKSPACE    &hm LEFT_SHIFT ENTER  &tog 1  &tog 2
+&none  &qplusctrlpluscaps  &kp W  &kp E    &kp R      &kp T            &kp Y                 &kp U  &kp I      &kp O    &kp P      &none
+&none  &AplusShiftplusWIN  &kp S  &kp D    &kp F      &kp G            &kp H                 &kp J  &kp K      &kp L    &td0       &none
+&none  &kp Z               &kp X  &kp C    &kp V      &kp B            &kp N                 &kp M  &kp COMMA  &kp DOT  &kp SLASH  &none
+                                  &altesc  &kp SPACE  &kp BACKSPACE    &hm LEFT_SHIFT ENTER  &mo 1  &mo 2
             >;
         };
 
         num_layer {
             bindings = <
-&none  &hm TAB LC(TAB)         &kp LS(W)  &kp LS(E)  &kp LS(R)  &kp LS(T)        &kp LS(Y)             &kp LS(U)  &kp LS(I)      &kp LS(O)       &kp LS(P)      &none
-&none  &hm LEFT_SHIFT LS(A)    &kp LS(S)  &kp LS(D)  &kp LS(F)  &kp LS(G)        &kp LS(H)             &kp LS(J)  &kp LS(K)      &kp LS(L)       &kp LS(SLASH)  &none
-&none  &hm LEFT_CONTROL LC(Z)  &kp LS(X)  &kp LS(C)  &kp LS(V)  &kp LS(B)        &kp LS(N)             &kp LS(M)  &kp LS(COMMA)  &kp LS(PERIOD)  &kp LS(SLASH)  &none
-                                          &altesc    &kp SPACE  &kp BACKSPACE    &hm LEFT_SHIFT ENTER  &trans     &mo 2
+&none  &qtab      &kp LS(W)  &kp LS(E)  &kp LS(R)  &kp LS(T)    &kp LS(Y)             &kp LS(U)  &kp LS(I)      &kp LS(O)       &kp LS(P)      &none
+&none  &tdaa      &kp LS(S)  &kp LS(D)  &kp LS(F)  &kp LS(G)    &kp LS(H)             &kp LS(J)  &kp LS(K)      &kp LS(L)       &kp LS(SLASH)  &none
+&none  &kp LS(Z)  &kp LS(X)  &kp LS(C)  &kp LS(V)  &kp LS(B)    &kp LS(N)             &kp LS(M)  &kp LS(COMMA)  &kp LS(PERIOD)  &kp LS(SLASH)  &none
+                             &altesc    &kp SPACE  &kp LCTRL    &hm LEFT_SHIFT ENTER  &trans     &mo 2
             >;
         };
 
         sym_layer {
             bindings = <
-&none  &kp NUMBER_1    &kp NUMBER_2    &kp NUMBER_3    &kp NUMBER_4    &kp N5             &kp NUMBER_6          &kp N7     &kp N8    &kp N9    &kp N0    &none
-&none  &kp LEFT_SHIFT  &kp GRAVE       &kp LC(A)       &kp UP_ARROW    &kp KP_MULTIPLY    &kp MINUS             &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &none
-&none  &tog 3          &sk LEFT_SHIFT  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT          &kp UNDER             &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE  &none
-                                       &kp LEFT_SHIFT  &kp SPACE       &kp BACKSPACE      &hm LEFT_SHIFT ENTER  &tog 1     &tog 2
+&none  &kp NUMBER_1    &kp NUMBER_2    &kp NUMBER_3              &kp NUMBER_4    &kp N5             &kp NUMBER_6          &kp N7     &kp N8    &kp N9    &kp N0    &none
+&none  &kp LEFT_SHIFT  &kp GRAVE       &hm C_VOL_DN C_VOLUME_UP  &kp UP_ARROW    &kp KP_MULTIPLY    &kp MINUS             &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &none
+&none  &mo 3           &sk LEFT_SHIFT  &kp LEFT_ARROW            &kp DOWN_ARROW  &kp RIGHT          &kp UNDER             &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE  &none
+                                       &altesc                   &kp SPACE       &kp BACKSPACE      &hm LEFT_SHIFT ENTER  &mo 1      &trans
             >;
         };
 
@@ -166,8 +200,26 @@
             bindings = <
 &none  &kp F1  &kp F2  &kp F3        &kp F4        &kp F5              &kp F6        &kp F7        &kp F8        &kp F9          &kp F10  &none
 &none  &none   &none   &kp C_PREV    &kp C_NEXT    &kp C_PLAY_PAUSE    &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &none           &kp F11  &none
-&none  &tog 3  &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2        &bt BT_SEL 3  &bt BT_NXT    &bt BT_CLR    &bt BT_CLR_ALL  &kp F12  &none
-                       &sys_reset    &trans        &bootloader         &bootloader   &tog 1        &tog 2
+&none  &trans  &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2        &bt BT_SEL 3  &bt BT_NXT    &bt BT_CLR    &bt BT_CLR_ALL  &kp F12  &none
+                       &sys_reset    &trans        &bootloader         &bootloader   &mo 1         &mo 2
+            >;
+        };
+
+        capital {
+            bindings = <
+&trans  &key_repeat  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans       &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans       &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                             &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        layer_5 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
