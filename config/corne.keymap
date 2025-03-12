@@ -33,7 +33,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <350>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -137,28 +137,28 @@
 
         default_layer {
             bindings = <
-&none  &qtab               &kp W             &kp E        &kp R      &kp T            &kp Y                 &kp U  &kp I      &kp O    &kp P              &none
-&none  &kp A               &hm LS(S) S       &kp D        &kp F      &kp G            &kp H                 &kp J  &kp K      &kp L    &td0               &none
-&none  &hm LEFT_CONTROL Z  &hm LEFT_SHIFT X  &hm LC(C) C  &kp V      &kp B            &kp N                 &kp M  &kp COMMA  &kp DOT  &hm QUESTION FSLH  &none
-                                             &altesc      &kp SPACE  &kp BACKSPACE    &hm LEFT_SHIFT ENTER  &mo 1  &mo 2
+&none  &kp Q  &kp W  &kp E    &kp R      &kp T            &kp Y                 &kp U  &kp I      &kp O    &kp P      &none
+&none  &kp A  &kp S  &kp D    &kp F      &kp G            &kp H                 &kp J  &kp K      &kp L    &td0       &none
+&none  &kp Z  &kp X  &kp C    &kp V      &kp B            &kp N                 &kp M  &kp COMMA  &kp DOT  &kp SLASH  &none
+                     &altesc  &kp SPACE  &kp BACKSPACE    &hm LEFT_SHIFT ENTER  &mo 1  &mo 2
             >;
         };
 
         num_layer {
             bindings = <
-&none  &none  &none        &kp LC(TAB)     &kp UP_ARROW    &kp PG_UP          &kp PLUS   &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &none
-&none  &none  &none        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW    &kp MINUS  &kp N4  &kp N5  &kp N6  &kp SLASH        &none
-&none  &mo 3  &hm AMPS AT  &kp C_MUTE      &kp C_VOL_DN    &kp C_VOLUME_UP    &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT          &none
-                           &altesc         &kp SPACE       &kp BACKSPACE      &kp ENTER  &trans  &mo 2
+&none  &hm TAB LC(TAB)         &kp LS(W)  &kp LS(E)  &kp LS(R)  &kp LS(T)        &kp LS(Y)             &kp LS(U)  &kp LS(I)      &kp LS(O)       &kp LS(P)      &none
+&none  &hm LEFT_SHIFT LS(A)    &kp LS(S)  &kp LS(D)  &kp LS(F)  &kp LS(G)        &kp LS(H)             &kp LS(J)  &kp LS(K)      &kp LS(L)       &kp LS(SLASH)  &none
+&none  &hm LEFT_CONTROL LC(Z)  &kp LS(X)  &kp LS(C)  &kp LS(V)  &kp LS(B)        &kp LS(N)             &kp LS(M)  &kp LS(COMMA)  &kp LS(PERIOD)  &kp LS(SLASH)  &none
+                                          &altesc    &kp SPACE  &kp BACKSPACE    &hm LEFT_SHIFT ENTER  &trans     &mo 2
             >;
         };
 
         sym_layer {
             bindings = <
-&none  &kp NUMBER_1  &kp NUMBER_2    &kp NUMBER_3    &kp NUMBER_4  &kp N5           &kp NUMBER_6  &kp N7     &kp N8    &kp N9    &kp N0    &none
-&none  &none         &trans          &kp GRAVE       &kp TILDE     &none            &kp MINUS     &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &none
-&none  &mo 3         &sk LEFT_SHIFT  &none           &none         &none            &kp UNDER     &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE  &none
-                                     &kp LEFT_SHIFT  &kp SPACE     &kp BACKSPACE    &kp ENTER     &mo 1      &trans
+&none  &kp NUMBER_1    &kp NUMBER_2    &kp NUMBER_3    &kp NUMBER_4    &kp N5             &kp NUMBER_6          &kp N7     &kp N8    &kp N9    &kp N0    &none
+&none  &kp LEFT_SHIFT  &kp GRAVE       &kp LC(A)       &kp UP_ARROW    &kp KP_MULTIPLY    &kp MINUS             &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &none
+&none  &mo 3           &sk LEFT_SHIFT  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT          &kp UNDER             &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE  &none
+                                       &kp LEFT_SHIFT  &kp SPACE       &kp BACKSPACE      &hm LEFT_SHIFT ENTER  &mo 1      &trans
             >;
         };
 
